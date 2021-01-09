@@ -1,0 +1,349 @@
+// Import predifined variables and functions
+@import "variables";
+@import "break-points";
+
+// Import google font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+.contact {
+    display: block;
+    background-color: white
+}
+
+* {
+    color: $white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $black;
+    margin: 0;
+    min-width: $mobile;
+}
+
+.main {
+    background-color: $black;
+    display: block;
+    margin-bottom: 250px;
+    overflow: auto;
+    position: relative;
+    z-index: 99;
+
+    .page {
+        display: none;
+    }
+
+    .page-active {
+        display: block;
+    }
+}
+
+.nav {
+    text-transform: uppercase;
+    padding: 35px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    overflow: auto;
+
+    a {
+        text-decoration: none;
+        padding: 20px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__container {
+        display: block;
+        overflow: hidden;
+        font-size: 20px;
+
+        &__site-name {
+            text-align: center;
+        }
+
+        &__menu {
+            text-align: end;
+
+            ul {
+                list-style-type: none;
+                display: flex;
+                margin-top: 15%;
+            }
+        }
+
+        @include breakpoint(tablet) {
+            font-size: 18px;  
+            &__site-name {
+                float: left;
+            }
+    
+            &__menu {
+                float: right;
+                ul {
+                    margin-top: 0%;
+                }
+            }
+        }
+    }
+}
+
+.home {
+    text-transform: uppercase;    
+    display: none;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 10vh;
+        padding-bottom: 30vh;
+
+        @include breakpoint(tablet) {
+            font-size: 30px;
+        }
+
+        @include breakpoint(laptop) {
+            flex-direction: row;
+        }
+    
+        &__photo {
+            flex: 1;
+            margin: auto;
+        }
+
+        &__text {
+            flex: 1;
+            margin: auto;
+            text-align: center;
+            margin-top: 18%;
+
+            h2 {
+                font-size: 40px;
+                padding-bottom: 2em;
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+            em {
+                text-decoration: underline;
+                font-size: 1.5em;
+                padding: 0.3em;
+            }
+        }
+    }
+}
+
+.location {
+    display: none;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 10vh;
+        padding-bottom: 30vh;
+
+        @include breakpoint(tablet) {
+            font-size: 30px;
+        }
+
+        @include breakpoint(laptop) {
+            flex-direction: row;
+        }
+    
+        &__text {
+            flex:1;
+            margin-top: 6%;
+            text-align: center;
+
+            h2 {
+                line-height: 3;
+                text-decoration: none;
+            }
+
+            p {
+                text-decoration: underline;
+            }
+        }
+    
+        &__map {
+            flex:1;
+            margin-top: 10%;
+            margin-bottom: 10%;
+    
+            div {
+                height: 100%;
+            }
+
+            #map {
+                height: 400px;
+                width: 80%;
+                margin: auto;
+            }
+        }
+    }
+}
+
+.service {
+    display: none;    
+    
+    &__container {
+        display: flex;
+        flex-direction: column;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;   
+        padding-top: 20vh;
+        padding-bottom: 30vh;
+
+        @include breakpoint(tablet) {
+            font-size: 20px;
+        }
+
+        @include breakpoint(laptop) {
+            flex-direction: row;
+        }
+
+        h2 {
+            margin-left: 10%;
+            margin-right: 10%;
+            padding: 3px;
+            background-color: $grey;
+            margin-bottom: 5%;
+        }
+
+        &__certificates {
+            flex: 1;
+            margin-bottom: 5%;
+        }
+
+        &__services {
+            flex: 1;
+            margin-bottom: 5%;
+
+            &--blocks {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                &--block {
+                    flex:1;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 30px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    justify-content: center;        
+                }
+            }
+        }
+    }
+}
+
+.sticky {
+    font-size: 10px;
+    position: fixed;
+    text-decoration: none;
+    text-transform: uppercase;
+    top: 40%;
+
+    &--left {
+        position: fixed;
+        left: -20px;
+        text-align: right;
+        transform: scale(1) rotate(90deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+    }
+
+    &--right {
+        position: fixed;
+        right: -20px;
+        transform: scale(1) rotate(270deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+    }
+}
+
+.footer{
+    display: block;
+    overflow: auto;
+    background-color: $white;
+    height: 250px;
+    bottom: 0;
+    z-index: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+    &__container {
+        max-width: 1000px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+
+        @include breakpoint(tablet) {
+            flex-direction: row;
+        }
+
+        &__logo {
+            flex: 1;
+            margin: auto;
+            figure {
+                img {
+                    width: 300px;
+                    padding: 20px;
+                }
+            }
+        }
+
+        &__contact {
+            flex: 1;
+            flex-direction: row;
+            margin: auto;            
+            a {
+                color: $black;
+                padding: 10px;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+.contacts{
+    display: none;
+    background-color: $white;
+  
+    &__container {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+
+        &__contact {
+            flex-direction: row;
+            margin: auto;            
+            a {
+                color: $black;
+                padding: 10px;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
